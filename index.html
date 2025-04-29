@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>스도쿠 대회</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>스도쿠 대회</h1>
+
+  <!-- 학생 정보 입력 -->
+  <div id="student-info">
+    <input type="text" id="student-name" placeholder="이름 입력" required>
+    <input type="text" id="student-id" placeholder="학번 입력" required>
+    <button onclick="startGame()">시작하기</button> <!-- 시작하기 버튼 -->
+  </div>
+
+  <!-- 스도쿠 보드 영역 (처음엔 안 보이게) -->
+  <div id="sudoku-board" style="display: none;"></div>
+
+  <!-- 제출 버튼 -->
+  <button id="submit-button" onclick="submitSudoku()" style="display: none;">제출하기</button>
+
+  <!-- 결과 표시 -->
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
