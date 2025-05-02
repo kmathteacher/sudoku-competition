@@ -30,7 +30,8 @@ h1 {
   border-radius: 6px;
 }
 
-#student-info button {
+#student-info button,
+#submit-button {
   padding: 10px 20px;
   font-size: 16px;
   margin-top: 10px;
@@ -41,44 +42,65 @@ h1 {
   cursor: pointer;
 }
 
-#student-info button:hover {
-  background-color: #45a049;
-}
-
-#sudoku-board {
-  display: grid;
-  grid-template-columns: repeat(4, 50px); /* 나중에 9로 변경할거야 */
-  grid-gap: 5px;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-input[type="number"] {
-  width: 48px;
-  height: 48px;
-  text-align: center;
-  font-size: 18px;
-  border: 1px solid #999;
-  border-radius: 6px;
-}
-
 #submit-button {
-  padding: 10px 20px;
-  font-size: 16px;
   background-color: #2196F3;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
 }
 
 #submit-button:hover {
   background-color: #1976D2;
 }
 
+#student-info button:hover {
+  background-color: #45a049;
+}
+
+#sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 40px); /* 9x9용 */
+  gap: 0;
+  border: 3px solid black; /* 외곽 테두리 */
+  box-sizing: content-box;
+}
+
+#sudoku-board input {
+  width: 52px;
+  height: 52px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+/* 진한 3x3 테두리 */
+input.top-border {
+  border-top: 3px solid #000 !important;
+}
+
+input.bottom-border {
+  border-bottom: 3px solid #000 !important;
+}
+
+input.left-border {
+  border-left: 3px solid #000 !important;
+}
+
+input.right-border {
+  border-right: 3px solid #000 !important;
+}
+
 #result {
   margin-top: 20px;
   font-size: 18px;
   color: #333;
+}
+
+/* 숫자 입력칸 스핀버튼 제거 */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
